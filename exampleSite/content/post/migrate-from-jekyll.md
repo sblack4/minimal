@@ -55,6 +55,7 @@ As an example, I was using a custom [`image_tag`](https://github.com/alexandre-n
 
 Jekyll's plugin:
 
+```
     module Jekyll
       class ImageTag < Liquid::Tag
         @url = nil
@@ -108,9 +109,9 @@ Jekyll's plugin:
       end
     end
     Liquid::Template.register_tag('image', Jekyll::ImageTag)
-
+```
 is written as this Hugo shortcode:
-
+```
     <!-- image -->
     <figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
         {{ with .Get "link"}}<a href="{{.}}">{{ end }}
@@ -129,7 +130,7 @@ is written as this Hugo shortcode:
         {{ end }}
     </figure>
     <!-- image -->
-
+```
 ### Usage
 I simply changed:
 
